@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Character Responsive HTML5 Template</title>
+    <!--
+Template 2110 Character
+http://www.tooplate.com/view/2110-character
+-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600">
+    <!-- https://fonts.google.com/specimen/Open+Sans -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="css/tooplate-style.css">
+</head>
+
+<!-- <body class="tm-bg-dark"> -->
+
+<body style="background-color: #333333;">
+
+    <h2 style="color: #ffffff;text-align: center;">
+        <a href="index.html">На Главную</a>
+    </h2>
+    <!-- <main class="tm-container masonry"> -->
+
+    <!-- <div class="item tm-block-right" data-desktop-seq-no="7" data-mobile-seq-no="3"> -->
+    <!-- <div class="tm-block-right-inner tm-bg-primary-light tm-text-white tm-block tm-block-wider tm-block-pad"> -->
+    <div class=" tm-bg-primary-light tm-text-white   tm-block-pad"
+        style="background-color: #cc9999;    color: #ffffff;font-size: small;">
+        <h1 style="text-align: center;font-size: x-large;">Договор оферты</h1>
+        <p>Настоящий договор оферты (далее – «Договор») является публичной офертой, адресованной любому
+            физическому или юридическому лицу (далее – «Клиент»), заключить договор на оказание услуг по продвижению
+            в
+            социальных сетях (Instagram, TikTok и прочих) от ADS marketing (далее – «Исполнитель»).</p>
+
+        <h2>1.Предмет договора</h2>
+        <p>1.1. Исполнитель обязуется предоставить Клиенту услуги по таргетированной рекламе и продвижению
+            аккаунтов в социальных сетях (Instagram, TikTok и прочих) в соответствии с требованиями и условиями,
+            указанными
+            на сайте Исполнителя.</p>
+
+        <h2>2.Порядок оказания услуг</h2>
+        <p>2.1. Клиент обязуется предоставить Исполнителю все необходимые данные и доступы для выполнения услуг, а
+            также согласиться с методами продвижения, описанными на сайте Исполнителя.</p>
+        <p>2.2. Исполнитель обязуется предоставить Клиенту отчеты о проделанной работе и достигнутых
+            результатах.</p>
+
+        <h2>3.Оплата услуг</h2>
+        <p>3.1. Стоимость услуг определяется в соответствии с тарифами, указанными на сайте Исполнителя.</p>
+        <p>3.2. Оплата производится Клиентом в соответствии с выбранным им тарифом согласно указанным на сайте
+            Исполнителя способам оплаты.</p>
+
+        <h2>4.Ответственность сторон</h2>
+        <p>4.1. Исполнитель не несет ответственности за возможные изменения в алгоритмах социальных сетей,
+            которые
+            могут повлиять на результаты продвижения.</p>
+        <p>4.2. Клиент несет ответственность за достоверность предоставленной им информации и за нарушение
+            правил
+            использования социальных сетей.</p>
+
+        <h2>5.Заключительные положения</h2>
+        <p>5.1. Настоящий Договор считается заключенным с момента акцепта Клиентом условий оферты путем
+            оформления
+            заказа на сайте Исполнителя.</p>
+        <p>5.2. Договор может быть изменен или расторгнут по соглашению сторон.</p>
+        <p>5.3. Все споры и разногласия, возникающие между сторонами по настоящему Договору, будут разрешаться
+            путем
+            переговоров.</p>
+
+        <h2>6.Контактная информация</h2>
+        <p>Исполнитель: ADS marketing,</br>Адрес: Си Синхай 16,</br>Телефон: 87072639960,</br>Электронная почта:
+            almasbekovich19@yandex.kz</p>
+
+    </div>
+
+</body>
+
+
+<!-- </main> -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<!-- https://jquery.com/download/ -->
+<script>
+
+    let callAdjustLayout;
+    let currentLayout = "desktop",
+        nextLayout = "desktop";
+
+    /**
+     * detect IE
+     * returns version of IE or false, if browser is not Internet Explorer
+     */
+    function detectIE() {
+        var ua = window.navigator.userAgent;
+
+        var msie = ua.indexOf('MSIE ');
+        if (msie > 0) {
+            // IE 10 or older => return version number
+            return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+        }
+
+        var trident = ua.indexOf('Trident/');
+        if (trident > 0) {
+            // IE 11 => return version number
+            var rv = ua.indexOf('rv:');
+            return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+        }
+
+        var edge = ua.indexOf('Edge/');
+        if (edge > 0) {
+            // Edge (IE 12+) => return version number
+            return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+        }
+
+        // other browser
+        return false;
+    }
+
+    // Adjust layout based on the browser width
+    function adjustLayout() {
+        let block1, block2, block3, block4, block5, block6, block7, block8, block9;
+
+        if (window.innerWidth <= 1199) {
+            // Mobile layout
+            nextLayout = "mobile";
+            block1 = $("div[data-mobile-seq-no='1']");
+            block2 = $("div[data-mobile-seq-no='2']");
+            block3 = $("div[data-mobile-seq-no='3']");
+            block4 = $("div[data-mobile-seq-no='4']");
+            block5 = $("div[data-mobile-seq-no='5']");
+            block6 = $("div[data-mobile-seq-no='6']");
+            block7 = $("div[data-mobile-seq-no='7']");
+            block8 = $("div[data-mobile-seq-no='8']");
+            block9 = $("div[data-mobile-seq-no='9']");
+        } else {
+            // Desktop layout
+            nextLayout = "desktop";
+            block1 = $("div[data-desktop-seq-no='1']");
+            block2 = $("div[data-desktop-seq-no='2']");
+            block3 = $("div[data-desktop-seq-no='3']");
+            block4 = $("div[data-desktop-seq-no='4']");
+            block5 = $("div[data-desktop-seq-no='5']");
+            block6 = $("div[data-desktop-seq-no='6']");
+            block7 = $("div[data-desktop-seq-no='7']");
+            block8 = $("div[data-desktop-seq-no='8']");
+            block9 = $("div[data-desktop-seq-no='9']");
+        }
+
+        if (nextLayout !== currentLayout) {
+            // Reorder blocks based on their seq no
+            block1.after(block2.detach());
+            block2.after(block3.detach());
+            block3.after(block4.detach());
+            block4.after(block5.detach());
+            block5.after(block6.detach());
+            block6.after(block7.detach());
+            block7.after(block8.detach());
+            block8.after(block9.detach());
+            currentLayout = nextLayout;
+        }
+    }
+
+    // Adjust layout upon window resize
+    window.onresize = function () {
+        clearTimeout(callAdjustLayout);
+        callAdjustLayout = setTimeout(adjustLayout, 100);
+    }
+
+    // DOM is ready
+    $(function () {
+        if (detectIE()) {
+            alert('Please use the latest version of Chrome or Firefox for best browsing experience.');
+        }
+
+        adjustLayout();
+    })
+</script>
+</body>
+
+</html>
